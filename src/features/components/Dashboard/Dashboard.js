@@ -9,7 +9,7 @@ const Home = () => {
     const searchCity = async (city) => {
         const apiKey = "2f415681a836c432c94396aad5207867";
         const userResponse = await fetch(
-            `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${apiKey}`
+            `https://api.openweathermap.org/data/2.5/forecast?q=${city}&units=imperial&appid=${apiKey}`
         );
         const response = await userResponse.json();
         console.log(response);

@@ -1,4 +1,21 @@
 .forcast-card {
     border: 2px solid black;
     padding: 10px;
+    background-color: cornflowerblue;
+}
+
+.date {
+    color: white;
+}
+
+.temp {
+    color: white;
+}
+
+.feels-like {
+    color: white;
+}
+
+.humidity {
+    color: white;
 }
