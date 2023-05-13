@@ -1,12 +1,15 @@
 import { useSelector } from "react-redux";
 import { searchedCity } from "../../../app/searchSlice";
 import ForcastCard from "../ForecastCard/ForecastCard";
-import './Forecast.css'
+import './Forecast.css';
 
-const ForecastList = () => {
+const ForecastList = ({ searchError }) => {
     const selectedCity =  useSelector(searchedCity);
 
     const displayForcast = () => {
+        if (searchError) {
+            return <p>Invalid Search Term: {searchError}</p>
+        };
         return Object.keys(selectedCity).length ? (
             <div className="forcast-list">
                 {selectedCity.list.map((data, i) => {
