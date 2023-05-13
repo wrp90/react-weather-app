@@ -1,0 +1,13 @@
+.forcast-container {
+    margin: 20px;
+}
+
+.city-name {
+    border-bottom: 1px dashed black;
+}
+
+.forcast-list {
+    display: flex;
+    gap: 24px;
+    flex-wrap: wrap;
+}

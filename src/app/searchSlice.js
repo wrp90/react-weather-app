@@ -23,4 +23,6 @@ export const { addCity, addSearchedCity} = searchSlice.actions;
 
 export const selectCities = (state) => state.cities.recentCitySearch;
 
+export const searchedCity = (state) => state.cities.searchedCity;
+
 export default searchSlice.reducer;
