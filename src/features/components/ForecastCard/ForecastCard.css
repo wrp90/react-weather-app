@@ -8,6 +8,10 @@
     color: white;
 }
 
+.weather-forecast {
+    color: white;
+}
+
 .temp {
     color: white;
 }
@@ -18,4 +22,9 @@
 
 .humidity {
     color: white;
+}
+
+.view-link {
+    color: white;
+    display: block;
 }
