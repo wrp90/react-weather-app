@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
-// import { useDispatch } from 'react-redux';
-// import { addSingleDay } from '../../../app/searchSlice';
+import { useDispatch } from 'react-redux';
+import { addSingleDay } from '../../../app/searchSlice';
 import './ForecastCard.css';
 
 // const ForcastCard = ({ data }) => {
@@ -21,7 +21,17 @@ import './ForecastCard.css';
 // };
 
 const ForcastCard = ({ data }) => {
-    // const dispatch = useDispatch();
+    const dispatch = useDispatch();
+
+    const forecastInfo = {
+        dt: data.dt,
+        date: data.dt_txt.substring(0, 10),
+        forcast: data.weather[0].description,
+        temp: data.main.temp,
+        feels_like: data.main.feels_like,
+        humidity: data.main.humidity,
+    };
+
     const forcast = (
         <div className="forcast-card">
             <img
@@ -34,10 +44,14 @@ const ForcastCard = ({ data }) => {
             <h3 className="temp">Temperature: {data.main.temp}°F</h3>
             <h3 className="feels-like">Feels like: {data.main.feels_like}°F</h3>
             <h3 className="humidity">Humidity: {data.main.humidity}%</h3>
-            <Link className="view-link" to={`/single/${data.dt}`}>View More</Link>
+            {/* <Link className="view-link" to={`/single/${data.dt}`}>View More</Link> */}
+            <Link to={{
+                pathname: `/single/${data.dt}`
+            }}>View More</Link>
         </div>
-    )
-    // dispatch(addSingleDay(forcast));
+    );
+
+    dispatch(addSingleDay(forecastInfo));
 
     return forcast;
 };
