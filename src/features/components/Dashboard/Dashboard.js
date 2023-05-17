@@ -9,6 +9,7 @@ const Home = () => {
     const [searchError, setSearchError] = useState('');
 
     const dispatch = useDispatch();
+    
     const searchCity = async (city) => {
         const apiKey = "2f415681a836c432c94396aad5207867";
         const userResponse = await fetch(
@@ -21,7 +22,6 @@ const Home = () => {
             if (searchError) {
                 setSearchError('')
             }
-            console.log(response);
             dispatch(addCity(response));
             dispatch(addSearchedCity(response));
         }
