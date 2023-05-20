@@ -12,8 +12,10 @@ const Navbar = () => {
     const logOut = () => {
         if (isLoggedIn) {
             dispatch(setIsLoggedIn(false));
+            navigate('/');
+        } else {
+            navigate('/login');
         }
-        navigate('/');
     };
 
     return (

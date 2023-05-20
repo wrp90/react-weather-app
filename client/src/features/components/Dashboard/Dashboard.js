@@ -6,7 +6,7 @@ import Forecast from "../Forecast/Forecast";
 import Navbar from "../Navbar/Navbar";
 import './Dashboard.css';
 
-const Home = () => {
+const Dashboard = () => {
     const [searchError, setSearchError] = useState('');
 
     const dispatch = useDispatch();
@@ -37,4 +37,4 @@ const Home = () => {
     );
 };
 
-export default Home;
+export default Dashboard;

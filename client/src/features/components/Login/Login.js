@@ -35,6 +35,7 @@ const Login = () => {
 
     return (
         <div className="login-form">
+            <h1 className="title">Log In</h1>
             <label><b>Username</b></label>
             <input type="text" placeholder="Enter Username" name="uname" required onChange={(event) => setUser({ ...user, userName: event.target.value })} />
             {!isLoggingIn && <>
