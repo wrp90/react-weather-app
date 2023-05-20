@@ -5,6 +5,7 @@ const initialState = {
     recentCitySearch: [],
     searchedCity: {},
     singleDay: [],
+    isLoggedIn: false,
 };
 
 export const searchSlice = createSlice({
@@ -20,15 +21,20 @@ export const searchSlice = createSlice({
         addSingleDay: (state, action) => {
             state.singleDay = [...state.singleDay, action.payload];
         },
+        setIsLoggedIn: (state, action) => {
+            state.isLoggedIn = action.payload;
+        }
     },
 });
 
-export const { addCity, addSearchedCity, addSingleDay} = searchSlice.actions;
+export const { addCity, addSearchedCity, addSingleDay, setIsLoggedIn} = searchSlice.actions;
 
 export const selectCities = (state) => state.cities.recentCitySearch;
 
 export const searchedCity = (state) => state.cities.searchedCity;
 
 export const selectSingleDay = (state) => state.cities.singleDay;
+
+export const loggedIn = (state) => state.cities.isLoggedIn;
 
 export default searchSlice.reducer;

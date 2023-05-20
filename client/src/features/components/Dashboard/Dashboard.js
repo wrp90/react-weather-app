@@ -3,6 +3,7 @@ import { addCity, addSearchedCity } from "../../../app/searchSlice";
 import { useState } from "react";
 import SearchBar from "../SearchBar/SearchBar";
 import Forecast from "../Forecast/Forecast";
+import Navbar from "../Navbar/Navbar";
 import './Dashboard.css';
 
 const Home = () => {
@@ -29,6 +30,7 @@ const Home = () => {
 
     return (
         <div className="home-container">
+            <Navbar />
             <SearchBar onHandleSubmit={searchCity}/>
             <Forecast searchError={searchError}/>
         </div>
