@@ -2,15 +2,26 @@ const http = require('http');
 const express = require('express');
 const bcrypt = require('bcrypt');
 const cors = require('cors');
+const path = require('path');
 const { User } = require('./models');
+require('dotenv').config({
+    path: '../.env',
+});
 
 const hostname = '127.0.0.1';
-const port = 3001;
+const port = process.env.PORT || 3001
 
 const app = express();
 const server = http.createServer(app);
 
-app.use(express.static('public'));
+let staticPath = '../client/public';
+
+if (process.env.NODE_ENV === 'production') {
+  staticPath = '../client/build';
+}
+
+app.use(express.static(path.join(__dirname, staticPath)));
+
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cors({ origin: (orig, cb) => cb(null, true), credentials: true }));
