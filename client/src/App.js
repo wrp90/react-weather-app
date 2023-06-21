@@ -2,7 +2,6 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Dashboard from "./features/components/Dashboard/Dashboard";
 import SingleDay from "./features/components/SingleDay/SingleDay";
 import Login from "./features/components/Login/Login";
-import Home from "./features/components/Home/Home";
 
 
 function App() {
