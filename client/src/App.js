@@ -10,9 +10,9 @@ function App() {
     <div className="container">
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<Home />} />
+          {/* <Route path="/" element={<Home />} /> */}
+          <Route path="/" element={<Dashboard />} />
           <Route path="/login" element={<Login />} />
-          <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/single/:dt" element={<SingleDay />}/>
         </Routes>
       </BrowserRouter>
