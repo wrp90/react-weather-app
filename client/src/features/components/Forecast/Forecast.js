@@ -18,6 +18,7 @@ const ForecastList = ({ searchError }) => {
                             <ForcastCard data={data} key={data.dt}/>
                         )
                     }
+                    return null;
                 })}
             </div>
         ) : (

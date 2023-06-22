@@ -30,7 +30,7 @@ const Login = () => {
         }
         console.log(data);
         dispatch(setIsLoggedIn(true));
-        navigate('/dashboard');
+        navigate('/');
     };
 
     return (
@@ -45,7 +45,7 @@ const Login = () => {
             <label><b>Password</b></label>
             <input type="password" placeholder="Enter Password" name="psw" required onChange={(event) => setUser({ ...user, password: event.target.value })} />
             <button type="submit" onClick={submitLogin}>{isLoggingIn ? "Login" : "Register"}</button>
-            <a onClick={() => setIsLoggingIn(!isLoggingIn)}>{isLoggingIn ? "Register" : "Login"}</a>
+            <button onClick={() => setIsLoggingIn(!isLoggingIn)}>{isLoggingIn ? "Register" : "Login"}</button>
             {message && <p>{message}</p>}
         </div>
     )
