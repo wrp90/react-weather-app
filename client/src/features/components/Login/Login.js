@@ -4,6 +4,8 @@ import { useDispatch } from 'react-redux';
 import './Login.css'
 import { setIsLoggedIn } from '../../../app/searchSlice';
 
+const baseUrl = process.env.REACT_APP_BASE_URL;
+
 const Login = () => {
     const dispatch = useDispatch()
     const navigate = useNavigate();
@@ -16,7 +18,7 @@ const Login = () => {
     const [isLoggingIn, setIsLoggingIn] = useState(true);
     const [ message, setMessage] = useState(null)
     const submitLogin = async () => {
-        const url = isLoggingIn? 'http://localhost:3001/login':'http://localhost:3001/users'
+        const url = isLoggingIn? `${baseUrl}/login`:`${baseUrl}/users`
         const newUser = await fetch(url, {
             method: "POST",
             body: JSON.stringify(user),
