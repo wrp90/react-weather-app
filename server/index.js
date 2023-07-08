@@ -74,6 +74,10 @@ app.post('/login', async (req, res) => {
     }
 })
 
+app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname, staticPath, 'index.html'));
+});
+
 server.listen(port, hostname, () => {
     console.log(`Server running at http://${hostname}:${port}/`);
 });
