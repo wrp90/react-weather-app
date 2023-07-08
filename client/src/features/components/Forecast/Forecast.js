@@ -8,22 +8,23 @@ const ForecastList = ({ searchError }) => {
 
     const displayForcast = () => {
         if (searchError) {
-            return <p>Invalid Search Term: {searchError}</p>
-        };
-        return Object.keys(selectedCity).length ? (
+          return <p>Invalid Search Term: {searchError}</p>;
+        }
+      
+        if (selectedCity && Object.keys(selectedCity).length) {
+          return (
             <div className="forcast-list">
-                {selectedCity.list.map((data, i) => {
-                    if (i % 8 === 0) {
-                        return (
-                            <ForcastCard data={data} key={data.dt}/>
-                        )
-                    }
-                    return null;
-                })}
+              {selectedCity.list.map((data, i) => {
+                if (i % 8 === 0) {
+                  return <ForcastCard data={data} key={data.dt} />;
+                }
+                return null;
+              })}
             </div>
-        ) : (
-            <div>No Results</div>
-        );
+          );
+        } else {
+          return <div>No Results</div>;
+        }
     };
 
     return (
