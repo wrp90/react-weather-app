@@ -23,13 +23,13 @@ const ForecastList = ({ searchError }) => {
             </div>
           );
         } else {
-          return <div>No Results</div>;
+          return <div className="font">No Results</div>;
         }
     };
 
     return (
         <div className="forcast-container">
-            <h1 className="city-name">{selectedCity.city?.name}</h1>
+            <h1 className="city-name font">{selectedCity.city?.name}</h1>
             <div className="forcast-list">
                 {displayForcast()}
             </div>

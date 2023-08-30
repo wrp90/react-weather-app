@@ -13,3 +13,9 @@
     flex-wrap: wrap;
     justify-content: center;
 }
+
+@import url('https://fonts.googleapis.com/css2?family=Oswald&display=swap');
+
+.font {
+    font-family: 'Oswald', sans-serif;
+}

@@ -29,7 +29,7 @@ const Dashboard = () => {
     };
 
     return (
-        <div className="home-container">
+        <div className="home-container .font">
             <Navbar />
             <SearchBar onHandleSubmit={searchCity}/>
             <Forecast searchError={searchError}/>
