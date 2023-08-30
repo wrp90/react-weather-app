@@ -9,11 +9,13 @@ A front-end weather app with a half login system that searchers the open weather
 * JavaScript
 * React
 * Redux
-* bcrypt
+* React Router
+* React Bootstrap
 * Sequelize
-* Express
-* dotenv
 * PostgreSQL
+* Express
+* bcrypt
+* dotenv
 
 ## Deployed Link
 
