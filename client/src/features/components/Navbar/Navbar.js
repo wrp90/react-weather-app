@@ -13,7 +13,7 @@ const Navbar = () => {
     const logOut = () => {
         if (isLoggedIn) {
             dispatch(setIsLoggedIn(false));
-            navigate("/");
+            navigate("/login");
         } else {
             navigate("/login");
         }
