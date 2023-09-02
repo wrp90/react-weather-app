@@ -1,7 +1,19 @@
-.forcast-card {
-    border: 2px solid black;
+.forecast-card-wrapper {
+    height: 325px;
+    width: 175px;
+    margin-right: 20px;
+}
+
+.forecast-card {
     padding: 10px;
+    border: 1px solid black;
     background-color: #465E83;
+    border-radius: 5px;
+    height: 100%;
+    width: 100%; 
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .date {

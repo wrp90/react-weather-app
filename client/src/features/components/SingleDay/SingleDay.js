@@ -1,33 +1,38 @@
+import React from "react";
 import { useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
-import './SingleDay.css'
+import Card from 'react-bootstrap/Card'; // Import React Bootstrap Card
+import './SingleDay.css';
 
 const SingleDay = () => {
     const { dt } = useParams();
-    
+
     const selectedDay = useSelector((state) =>
         state.cities.singleDay.find((day) => day.dt === Number(dt))
     );
 
     return (
         <div className="single-day-container">
-            <div className="single-day-card">
-                <img
+            <Card className="single-day-card">
+                <Card.Img
                     className="icon"
                     src={selectedDay.src}
                     alt="weather icon for forecast"
                 />
-                <h2 className="date font">Date: {selectedDay.date}</h2>
-                <h3 className="weather-forecast font">Forecast: {selectedDay.forcast}</h3>
-                <h3 className="temp font">Temperature: {selectedDay.temp}°F</h3>
-                <h3 className="feels-like font">Feels like: {selectedDay.feels_like}°F</h3>
-                <h3 className="humidity font">Humidity: {selectedDay.humidity}%</h3>
-            </div>
+                <Card.Body>
+                    <Card.Title className="date font">Date: {selectedDay.date}</Card.Title>
+                    <Card.Text className="weather-forecast font">Forecast: {selectedDay.forcast}</Card.Text>
+                    <Card.Text className="temp font">Temperature: {selectedDay.temp}°F</Card.Text>
+                    <Card.Text className="feels-like font">Feels like: {selectedDay.feels_like}°F</Card.Text>
+                    <Card.Text className="humidity font">Humidity: {selectedDay.humidity}%</Card.Text>
+                </Card.Body>
+            </Card>
         </div>
-    )
+    );
 };
 
 export default SingleDay;
+
 
 
 

@@ -1,6 +1,8 @@
+import React from 'react';
 import { Link } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { addSingleDay } from '../../../app/searchSlice';
+import Card from 'react-bootstrap/Card';
 import './ForecastCard.css';
 
 const ForcastCard = ({ data }) => {
@@ -17,20 +19,22 @@ const ForcastCard = ({ data }) => {
     };
 
     const forcast = (
-        <div className="forcast-card">
-            <img
-                className="icon"
-                src={"http://openweathermap.org/img/wn/" + data.weather[0].icon + "@2x.png"}
-                alt="weather icon for forecast"
-            />
-            <h2 className="date font">Date: {data.dt_txt.substring(0, 10)}</h2>
-            <h3 className="weather-forecast font">Forecast: {data.weather[0].description}</h3>
-            <h3 className="temp font">Temperature: {data.main.temp}°F</h3>
-            {/* <h3 className="feels-like">Feels like: {data.main.feels_like}°F</h3>
-            <h3 className="humidity">Humidity: {data.main.humidity}%</h3> */}
-            <Link className="view-link font" to={{
-                pathname: `/single/${data.dt}`
-            }}>View More</Link>
+        <div className="forecast-card-wrapper">
+            <Card className="forecast-card">
+                <Card.Img
+                    variant="top"
+                    src={"http://openweathermap.org/img/wn/" + data.weather[0].icon + "@2x.png"}
+                    alt="weather icon for forecast"
+                />
+                <Card.Body>
+                    <Card.Title className="date font">Date: {data.dt_txt.substring(0, 10)}</Card.Title>
+                    <Card.Text className="weather-forecast font">Forecast: {data.weather[0].description}</Card.Text>
+                    <Card.Text className="temp font">Temperature: {data.main.temp}°F</Card.Text>
+                    <Link className="view-link font" to={{
+                        pathname: `/single/${data.dt}`
+                    }}>View More</Link>
+                </Card.Body>
+            </Card>
         </div>
     );
 
